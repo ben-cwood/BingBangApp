@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BV1-FR-VrT">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Game View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="BingBang" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8aa-yV-Osq"/>
+                        <viewControllerLayoutGuide type="bottom" id="qHh-Mt-9TT"/>
+                    </layoutGuides>
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zux-Iu-rBP">
+                                <rect key="frame" x="55" y="568" width="480" height="32"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BV1-FR-VrT" id="71j-Oj-br0"/>
+                                </connections>
+                            </adBannerView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="73u-5E-W1E">
+                                <rect key="frame" x="88" y="28" width="46" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="Fss-a1-pK2"/>
+                                </constraints>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" red="0.016866987179487203" green="0.016866987179487203" blue="0.016866987179487203" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="close:" destination="BV1-FR-VrT" eventType="touchUpInside" id="V1K-I7-3Db"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V5X-fw-Y7y">
+                                <rect key="frame" x="20" y="28" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="34i-aH-GvJ"/>
+                                    <constraint firstAttribute="width" constant="60" id="mtv-0j-WrO"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="twitter.png"/>
+                                <connections>
+                                    <action selector="tweetAction:" destination="BV1-FR-VrT" eventType="touchUpInside" id="uhb-9h-EP1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zyi-kY-CCi">
+                                <rect key="frame" x="520" y="28" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="pPn-QQ-ncx"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="facebook.png"/>
+                                <connections>
+                                    <action selector="facebookAction:" destination="BV1-FR-VrT" eventType="touchUpInside" id="wHY-8w-2JN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Rq-XX-EFz">
+                                <rect key="frame" x="485" y="536" width="95" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="95" id="a3w-T3-BrA"/>
+                                    <constraint firstAttribute="height" constant="24" id="rvt-zR-bn5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="12"/>
+                                <state key="normal" title="Sound Off">
+                                    <color key="titleColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="muteButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Mml-Kj-cU0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="V5X-fw-Y7y" firstAttribute="top" secondItem="Zyi-kY-CCi" secondAttribute="top" id="1hk-7T-PsH"/>
+                            <constraint firstItem="73u-5E-W1E" firstAttribute="leading" secondItem="V5X-fw-Y7y" secondAttribute="trailing" constant="45" id="5tT-pW-GUN"/>
+                            <constraint firstItem="V5X-fw-Y7y" firstAttribute="top" secondItem="8aa-yV-Osq" secondAttribute="bottom" constant="8" symbolic="YES" id="9Ld-uM-7dh"/>
+                            <constraint firstItem="73u-5E-W1E" firstAttribute="top" secondItem="8aa-yV-Osq" secondAttribute="bottom" constant="7" id="Cjr-1v-CMU"/>
+                            <constraint firstItem="Zyi-kY-CCi" firstAttribute="trailing" secondItem="7Rq-XX-EFz" secondAttribute="trailing" id="I0C-AY-e2T"/>
+                            <constraint firstItem="zux-Iu-rBP" firstAttribute="bottom" secondItem="qHh-Mt-9TT" secondAttribute="top" id="ZU0-xw-sNq"/>
+                            <constraint firstItem="Zyi-kY-CCi" firstAttribute="trailing" secondItem="3se-qz-xqx" secondAttribute="trailingMargin" id="apW-ZI-D26"/>
+                            <constraint firstItem="V5X-fw-Y7y" firstAttribute="bottom" secondItem="Zyi-kY-CCi" secondAttribute="bottom" id="ayG-I6-2Zb"/>
+                            <constraint firstItem="zux-Iu-rBP" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="f0F-SZ-Tx6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zux-Iu-rBP" secondAttribute="trailing" constant="27" id="jVm-xw-gMa"/>
+                            <constraint firstItem="zux-Iu-rBP" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leadingMargin" constant="27" id="kwZ-Rm-bqu"/>
+                            <constraint firstItem="V5X-fw-Y7y" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leadingMargin" id="ogX-a1-WeY"/>
+                            <constraint firstItem="zux-Iu-rBP" firstAttribute="centerY" secondItem="7Rq-XX-EFz" secondAttribute="centerY" id="sd4-bJ-aMK"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="jVm-xw-gMa"/>
+                                <exclude reference="kwZ-Rm-bqu"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <keyCommands/>
+                    <connections>
+                        <outlet property="adBannerView" destination="zux-Iu-rBP" id="qwd-EF-cVy"/>
+                        <outlet property="closeButton" destination="73u-5E-W1E" id="F2V-BI-I7h"/>
+                        <outlet property="facebookButton" destination="Zyi-kY-CCi" id="ySR-3c-CgH"/>
+                        <outlet property="muteButton" destination="7Rq-XX-EFz" id="wWj-hp-nsM"/>
+                        <outlet property="tweetButton" destination="V5X-fw-Y7y" id="THf-v4-zHQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="44" y="2"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="facebook.png" width="550" height="550"/>
+        <image name="twitter.png" width="550" height="550"/>
+    </resources>
+</document>
