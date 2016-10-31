@@ -28,8 +28,8 @@ class GameViewController: UIViewController, ADBannerViewDelegate, ADInterstitial
     
     var scene = GameScene(fileNamed:"GameScene")
     var Highscore = Int()
-    var tweetImage = UIImage!()
-    var facebookImage = UIImage!()
+    var tweetImage = UIImage()
+    var facebookImage = UIImage()
     var scoresScreen = false
     var gameCenterAchievements = [String: GKAchievement]()
     var soundOn = true
@@ -365,7 +365,7 @@ class GameViewController: UIViewController, ADBannerViewDelegate, ADInterstitial
             reportAchievement("BingBangAppAchievement50Points", amount: 50.0)
             
             
-            GKScore.report(scoreArray, withCompletionHandler: {(error : NSError?) -> Void in
+            GKScore.report(scoreArray, withCompletionHandler: {(error : Error?) -> Void in
                 if error != nil {
                     
                 }
